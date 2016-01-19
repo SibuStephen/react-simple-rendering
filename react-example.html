@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React rendering</title>
+   <script src="https://fb.me/react-0.14.6.js"></script>
+   <script src="https://fb.me/react-dom-0.14.6.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+    //json data
+     var data = {
+      "movie": "Ant Man",
+      "synopsis": "Ant man is a movie",
+      "title": "Marvel",
+      "year": 2015,
+      "Actorname": "sibu stephen"
+}
+
+var DataBlock = React.createClass({
+    getInitialState: function() {
+      return {
+        data: null
+      };
+    },              
+    render: function() {
+        return (<div>
+         <h1>Movie: {data.movie} &nbsp; 
+         Synopsis: {data.synopsis} &nbsp;
+         Title: {data.title} &nbsp;
+         Actor Name: {data.Actorname}</h1>
+
+        </div>);
+    }
+});
+
+React.render(<DataBlock/>, document.getElementById('example'));
+    </script>
+  </body>
+</html>
